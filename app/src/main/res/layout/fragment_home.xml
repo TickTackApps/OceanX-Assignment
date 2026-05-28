@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:layout_gravity="center"
+    android:gravity="top"
+    tools:context=".Fragments.HomeFragment">
+
+
+    <Spinner
+        android:id="@+id/vehicle_type_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:popupBackground="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/order_date_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_margin="8dp"
+        android:textSize="18sp"
+        android:textColorHint="@color/grey"
+        android:text="Order Date : 01 Jan 2000"
+        />
+
+    <TextView
+        android:id="@+id/order_time_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Order Time : 12:00 PM"
+        />
+
+    <EditText
+        android:id="@+id/order_id_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        android:layout_margin="8dp"
+        android:textColorHint="@color/grey"
+        android:hint="Order ID : Keeping blank cause random ID"
+        />
+
+    <EditText
+        android:id="@+id/order_start_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        android:layout_margin="8dp"
+        android:textColorHint="@color/grey"
+        android:hint="Starting Point : Gurugram"
+        />
+
+    <EditText
+        android:id="@+id/order_end_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        android:layout_margin="8dp"
+        android:textColorHint="@color/grey"
+        android:hint="End Point : Kanpur"
+        />
+
+    <Spinner
+        android:id="@+id/order_status_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:popupBackground="@color/white"
+        android:layout_margin="8dp"
+        />
+
+    <EditText
+        android:id="@+id/order_cost_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        android:layout_margin="8dp"
+        android:textColorHint="@color/grey"
+        android:hint="Price to Pay : 500"
+        />
+
+    <Button
+        android:id="@+id/order_data_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Order"
+        android:layout_margin="8dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColorHint="@color/grey"
+        />
+</LinearLayout>

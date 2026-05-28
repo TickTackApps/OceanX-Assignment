@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/yellow"
+    tools:context=".Fragments.OrdersFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/order_info_cont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/yellow"
+        android:background="@color/yellow"
+        >
+
+        <TextView
+            android:id="@+id/mo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Orders"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="12dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View your completed trips here. You can\ndownload invoices quickly book the same order again."
+            android:textSize="11dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/mo" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/order_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/order_cont_card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/order_info_cont">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/white">
+
+            <EditText
+                android:id="@+id/search_box"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/outlined_view"
+                android:drawableStart="@drawable/baseline_search_24"
+                android:drawableTint="@color/grey"
+                android:hint="Search by Order ID/Location"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textCursorDrawable="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toStartOf="@id/filter_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/filter_btn"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/outlined_view"
+                android:drawableStart="@drawable/outline_filter_alt_24"
+                android:drawablePadding="-20dp"
+                android:drawableTint="@color/black"
+                android:paddingStart="10dp"
+                android:text="Filter"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/sort_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sort_btn"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/outlined_view"
+                android:drawableStart="@drawable/baseline_sort_24"
+                android:drawablePadding="-20dp"
+                android:drawableTint="@color/black"
+                android:paddingStart="10dp"
+                android:text="Sort"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/order_sort_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:foregroundTint="@color/black"
+                android:popupBackground="@drawable/outlined_view"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/sort_btn"
+                app:layout_constraintTop_toBottomOf="@id/sort_btn" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/order_nav"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/outlined_view"
+                android:elevation="2dp"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_box"
+                app:tabGravity="fill"
+                app:tabIndicator="@drawable/order_tab_indicator"
+                app:tabIndicatorAnimationDuration="500"
+                app:tabIndicatorColor="@color/yellow"
+                app:tabIndicatorFullWidth="true"
+                app:tabIndicatorGravity="center"
+                app:tabIndicatorHeight="30dp"
+                app:tabMode="fixed"
+                app:tabRippleColor="@color/transparent"
+                app:tabTextAppearance="@style/CustomTabTextAppearance"
+                app:tabTextColor="@color/black">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/order_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:text="All Orders" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/order_completed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:text="Completed" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/order_cancelled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:text="Cancelled" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/order_b_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:text="Booked Again" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/order_txt_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/light_purple"
+                android:backgroundTint="@color/light_purple"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/order_nav">
+
+                <LinearLayout
+                    android:id="@+id/order_info_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_purple"
+                    android:backgroundTint="@color/light_purple"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/info_ico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/outline_info_24"
+                        app:tint="@color/black"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/info_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:text="यहाँ आपके सभी पिछले ऑर्डर दिखाए गए हैं।\nआप इनवॉइस डाउनलोड कर सकते हैं या उसी पते पर दोबारा ऑर्डर कर सकते हैं।"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/cross_ico"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="top"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/baseline_close_24"
+                        app:tint="@color/black" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/order_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/order_txt_cont"
+                tools:listitem="@layout/order_list_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/order_help_btn"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:clickable="true"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/golden"
+        app:icon="@drawable/headset"
+        android:text="Help"
+        app:shapeAppearanceOverlay="@style/CircleFabOverlay"
+        app:iconTint="@color/black"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        app:iconGravity="textTop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

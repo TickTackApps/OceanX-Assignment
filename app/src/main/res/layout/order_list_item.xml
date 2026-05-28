@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/order_item"
+    android:backgroundTint="@color/white"
+    android:background="@color/white"
+    app:cardCornerRadius="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/order_vehicle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/truck" />
+
+        <TextView
+            android:id="@+id/vehicle_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Four Wheeler"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/order_vehicle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/order_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="05 Feb, 4:46 PM"
+            android:textSize="10dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/order_vehicle"
+            app:layout_constraintTop_toTopOf="@id/textView4"
+            app:layout_constraintBottom_toBottomOf="@id/textView4"
+            />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" | "
+            android:textSize="16sp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/order_date"
+            app:layout_constraintStart_toEndOf="@+id/order_date"
+            app:layout_constraintTop_toBottomOf="@+id/vehicle_type" />
+
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order ID:#ORD12345"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            app:tint="@color/green"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/order_vehicle"
+            app:layout_constraintTop_toBottomOf="@+id/order_date"
+            app:srcCompat="@drawable/baseline_location_on_24" />
+
+        <TextView
+            android:id="@+id/order_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="741, Gumanwara"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/order_cost"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            app:tint="@color/red"
+            app:layout_constraintStart_toEndOf="@+id/order_vehicle"
+            app:layout_constraintTop_toTopOf="@id/order_end"
+            app:layout_constraintBottom_toBottomOf="@id/order_end"
+            app:srcCompat="@drawable/baseline_location_on_24" />
+
+        <TextView
+            android:id="@+id/order_end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="00, Main Rd, Shivaji Nagar, Jhansi, Uttar Pradesh 284001, India"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toStartOf="@+id/order_cost"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/order_start" />
+
+        <TextView
+            android:id="@+id/order_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹ 1515.0"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/order_menu"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/order_cost"
+            app:srcCompat="@drawable/dots" />
+
+        <TextView
+            android:id="@+id/order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCELLED"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/status_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/order_vehicle"
+            app:layout_constraintStart_toStartOf="@+id/order_vehicle"
+            app:layout_constraintTop_toBottomOf="@+id/order_vehicle" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/order_invoice"
+            android:layout_width="80dp"
+            android:layout_height="26dp"
+            android:text="Invoice"
+            android:paddingStart="8dp"
+            android:background="@drawable/outlined_view"
+            android:layout_marginEnd="8dp"
+            android:textAllCaps="false"
+            android:textSize="12dp"
+            android:drawableStart="@drawable/round_download_24"
+            android:drawableTint="@color/black"
+            android:drawablePadding="-16dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/order_b_a"
+            app:layout_constraintEnd_toStartOf="@+id/order_b_a"
+            app:layout_constraintTop_toTopOf="@+id/order_b_a" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/order_b_a"
+            android:layout_width="80dp"
+            android:layout_height="26dp"
+            android:background="@drawable/order_tab_indicator"
+            android:text="Book Again"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/order_end" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

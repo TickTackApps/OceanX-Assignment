@@ -2,15 +2,10 @@ package com.ticktackapps.oceanxassignment.Adapters
 
 
 import android.content.Context
-import android.content.Intent
-import android.graphics.Color
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -18,7 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.ticktackapps.oceanxassignment.OrderDetailActivity
 import com.ticktackapps.oceanxassignment.R
 import com.ticktackapps.oceanxassignment.Utils.BOOKED_AGAIN_ORDER
 import com.ticktackapps.oceanxassignment.Utils.CANCELLED_ORDER
@@ -56,7 +50,7 @@ class OrderListAdapter(private val orderList : ArrayList<OrderData>, context: Co
         position: Int
     ) {
 
-        holder.bind(orderList[position],position)
+        holder.bind(orderList[position])
         val currentOrder = orderList[position]
 
         holder.vehicleType.text = currentOrder.vehicleType
@@ -97,7 +91,7 @@ class OrderListAdapter(private val orderList : ArrayList<OrderData>, context: Co
 
         holder.orderBA.setOnClickListener {
 
-            newOrder(enoughContext, currentOrder)
+            newOrder(currentOrder)
             listener.reloadListData(currentOrder)
 
         }
@@ -130,13 +124,13 @@ class OrderListAdapter(private val orderList : ArrayList<OrderData>, context: Co
 
     }
 
-    fun newOrder(context: Context, order: OrderData){
+    fun newOrder(order: OrderData){
 
         val newOrderItem = order
 
         newOrderItem.orderStatus = "Booked Again"
 
-        var excluded = mutableListOf<String>()
+        val excluded = mutableListOf<String>()
 
         for (i in PreferencesHelper.getOrderList(enoughContext)) {
             excluded.add(i.orderID)
@@ -146,7 +140,7 @@ class OrderListAdapter(private val orderList : ArrayList<OrderData>, context: Co
 
         while (foundUnique) {
 
-            var random = (10000..99999).random().toString()
+            val random = (10000..99999).random().toString()
 
             if (!excluded.contains(random)) {
 
@@ -178,16 +172,16 @@ class OrderListAdapter(private val orderList : ArrayList<OrderData>, context: Co
         val orderInvoice = orderView.findViewById<Button>(R.id.order_invoice)
 
 
-        fun bind(order: OrderData, position: Int) {
+        fun bind(order: OrderData) {
 
             val moreButton = itemView.findViewById<ImageView>(R.id.order_menu)
             moreButton.setOnClickListener { view ->
-                showPopupMenu(view, order, position)
+                showPopupMenu(view, order)
             }
         }
 
 
-        private fun showPopupMenu(view: View, order: OrderData, position: Int) {
+        private fun showPopupMenu(view: View, order: OrderData) {
             val contextWrapper = ContextThemeWrapper(view.context, R.style.WhitePopupTheme)
 
             val popup = PopupMenu(contextWrapper, view)
@@ -201,7 +195,7 @@ class OrderListAdapter(private val orderList : ArrayList<OrderData>, context: Co
                         true
                     }
                     R.id.order_item_menu_b_a -> {
-                        newOrder(enoughContext, order)
+                        newOrder(order)
                         listener.reloadListData(order)
                         true
                     }

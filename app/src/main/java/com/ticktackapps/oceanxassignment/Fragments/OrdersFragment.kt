@@ -29,7 +29,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.flexbox.FlexboxLayout
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.ticktackapps.oceanxassignment.Adapters.OrderListAdapter
 import com.ticktackapps.oceanxassignment.HelpActivity
@@ -195,11 +194,7 @@ class OrdersFragment : Fragment(), OrderListAdapter.OnOrderActionListener {
 
         if(!filtersArray.isEmpty()){
 
-            for (i in filtersArray){
-
-                orderList.removeAll{!filtersArray.contains(it.vehicleType)}
-
-            }
+            orderList.removeAll{!filtersArray.contains(it.vehicleType)}
 
         }
 

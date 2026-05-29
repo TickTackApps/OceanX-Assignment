@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Help Center will be Here"
         android:textColor="@color/black"
-        android:textSize="32dp"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

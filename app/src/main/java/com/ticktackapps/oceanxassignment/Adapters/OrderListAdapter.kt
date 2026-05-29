@@ -60,7 +60,7 @@ class OrderListAdapter(private val orderList : ArrayList<OrderData>, context: Co
         val currentOrder = orderList[position]
 
         holder.vehicleType.text = currentOrder.vehicleType
-        holder.orderPrice.text = currentOrder.orderCost
+        holder.orderPrice.text = "₹ "+currentOrder.orderCost
         holder.orderID.text = "#ORD"+currentOrder.orderID
         holder.orderStart.text = currentOrder.orderStart
         holder.orderEnd.text = currentOrder.orderEnd

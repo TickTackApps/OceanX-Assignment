@@ -28,8 +28,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.flexbox.FlexboxLayout
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.ticktackapps.oceanxassignment.Adapters.OrderListAdapter
+import com.ticktackapps.oceanxassignment.HelpActivity
 import com.ticktackapps.oceanxassignment.OrderDetailActivity
 import com.ticktackapps.oceanxassignment.R
 import com.ticktackapps.oceanxassignment.Utils.FOUR_WHEELER
@@ -61,6 +64,7 @@ class OrdersFragment : Fragment(), OrderListAdapter.OnOrderActionListener {
     private lateinit var orderNavigation : TabLayout
     private lateinit var searchBox: EditText
     private lateinit var CardContainer : CardView
+    private lateinit var orderHelpButton: ExtendedFloatingActionButton
     private var searchText = ""
 
     override fun onCreateView(
@@ -80,12 +84,20 @@ class OrdersFragment : Fragment(), OrderListAdapter.OnOrderActionListener {
         orderNavigation = view.findViewById(R.id.order_nav)
         searchBox = view.findViewById(R.id.search_box)
         CardContainer = view.findViewById(R.id.order_cont_card)
+        orderHelpButton = view.findViewById(R.id.order_help_btn)
 
         CardContainer.setBackgroundResource(R.drawable.order_container_back)
 
         fetchOrderData()
         sortSetup()
         tabSetup()
+
+        orderHelpButton.setOnClickListener {
+
+            val intent = Intent(requireContext(), HelpActivity::class.java)
+            startActivity(intent)
+
+        }
 
         searchBox.setOnEditorActionListener {_,actionId, event ->
 

@@ -20,8 +20,7 @@
         android:textSize="36sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/get_date_time"
@@ -30,8 +29,7 @@
         android:textSize="36sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/get_cost"
@@ -40,8 +38,7 @@
         android:textSize="36sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/get_order_id"
@@ -50,8 +47,7 @@
         android:textSize="36sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/get_starting"
@@ -60,8 +56,7 @@
         android:textSize="36sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/get_end"
@@ -70,8 +65,7 @@
         android:textSize="36sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/get_status"
@@ -80,6 +74,5 @@
         android:textSize="36sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center"/>
 </LinearLayout>
